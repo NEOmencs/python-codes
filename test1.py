@@ -13,7 +13,7 @@ movie_file_path = "C:\\NEO\\Movies"  # Path where movies are stored
 
 # Garbage words which are present in the movie Names
 replace_words = ["720p", "Bluray", "\.", "x264", "YTS AG", "YIFY", "www UsaBit com", "\[", "\]", "_", "anoXmous",
-                 "BrRip","sujaidr", "-", "\(", "\)", "Ganool", "TMRG", "1080p", "480p","10th Anniversary Edition" ,"1080p x265 Joy"]
+                 "BrRip","sujaidr", "-", "\(", "\)", "Ganool", "TMRG", "1080p", "480p","10th Anniversary Edition" ]
 
 all_extension_list = []
 all_file_list_with_path = []
