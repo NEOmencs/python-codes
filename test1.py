@@ -1,4 +1,5 @@
 # Download IMDB datasets from here - https://datasets.imdbws.com/
+##
 import os
 import pandas as pd
 import difflib
@@ -12,7 +13,7 @@ movie_file_path = "C:\\NEO\\Movies"  # Path where movies are stored
 
 # Garbage words which are present in the movie Names
 replace_words = ["720p", "Bluray", "\.", "x264", "YTS AG", "YIFY", "www UsaBit com", "\[", "\]", "_", "anoXmous",
-                 "BrRip","sujaidr", "-", "\(", "\)", "Ganool", "TMRG", "1080p", "480p","10th Anniversary Edition"]
+                 "BrRip","sujaidr", "-", "\(", "\)", "Ganool", "TMRG", "1080p", "480p","10th Anniversary Edition" ,"1080p x265 Joy"]
 
 all_extension_list = []
 all_file_list_with_path = []
