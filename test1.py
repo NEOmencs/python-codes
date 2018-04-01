@@ -14,7 +14,9 @@ movie_file_path = "C:\\NEO\\Movies"  # Path where movies are stored
 # Garbage words which are present in the movie Names
 replace_words = ["720p", "Bluray", "\.", "x264", "YTS AG", "YIFY", "www UsaBit com", "\[", "\]", "_", "anoXmous",
                  "BrRip","sujaidr", "-", "\(", "\)", "Ganool", "TMRG", "1080p", "480p","10th Anniversary Edition","DVDScr"
-                "XVID","AC3","EtMovies"]
+                "XVID","AC3","EtMovies","YTS"]
+Movie_or_Serial = 'movie'
+delim = "___"
 
 all_extension_list = []
 all_file_list_with_path = []
@@ -23,8 +25,8 @@ name_of_movie_list = []
 imdb_matched_movie_list = []
 year_of_movie_list = []
 name_of_movie_folder_list = [] 
-# Extracting the list of video files for which IMDB information would be extracted
 
+# Extracting the list of video files for which IMDB information would be extracted
 for roots, directories, filename in os.walk(movie_file_path):
     for files in filename:
         filepath = os.path.join(roots, files)
@@ -126,8 +128,6 @@ pd.set_option('display.max_colwidth', -1)
 # pd.set_option('display.width', 5000)
 # pd.set_option('display.expand_frame_repr', False)
 
-Movie_or_Serial = 'movie'
-delim = "___"
 df_movie_new = pd.merge(df_movie,df_ratings_basics[df_ratings_basics['titleType']==Movie_or_Serial],left_on=['imdb_matched_name','year'],right_on = ['primaryTitle','startYear'],how='inner')
 df_movie_new['to_rename'] = df_movie_new['imdb_matched_name'] + delim + df_movie_new['year'] + delim + df_movie_new['averageRating'] + delim + df_movie_new['runtimeMinutes'] + delim + df_movie_new['genres']
 print(df_movie_new)
