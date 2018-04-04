@@ -150,5 +150,8 @@ print(df_movie_new)
 print("___________________________________________________________________________________________")
 print("___________________________________________________________________________________________")
 
-for x in range(len(video_file_list_with_path)):
+df_movie_new.index = df['complete_path'].str.len()
+df_movie_new = df_movie_new.sort_index(ascending=False).reset_index(drop=True)
+
+for x in range(len(df_movie_new)):
     os.rename(video_file_list_with_path[x].rsplit("\\", 1)[0], os.path.join(video_file_list_with_path[x].rsplit("\\", 1)[0], df_movie_new.loc[x]['to_rename']))
